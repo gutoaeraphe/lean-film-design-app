@@ -3,14 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// COLE A SUA CONFIGURAÇÃO DO FIREBASE AQUI
+// A config agora lê as variáveis de ambiente, que são seguras
 const firebaseConfig = {
-  apiKey: "AIzaSyDdLMejUJfq7zzWX-m_8gcDVOUViS1fRls",
-  authDomain: "lean-film-design-app.firebaseapp.com",
-  projectId: "lean-film-design-app",
-  storageBucket: "lean-film-design-app.firebasestorage.app",
-  messagingSenderId: "946605969141",
-  appId: "1:946605969141:web:8cc8a1eaef15b2a4baffbc"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Inicializa os serviços do Firebase
